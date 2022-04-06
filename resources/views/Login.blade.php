@@ -12,7 +12,7 @@
           </div>
           <div class="input-box-r">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="password" placeholder="Enter your password" required>
           </div>
         </div>
         <div class="button">
