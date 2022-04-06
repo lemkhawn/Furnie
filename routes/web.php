@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/index', function () {
     return view('index');
-});
+}) -> name('index');
 Route::get('/products', function () {
     return view('products');
 });
@@ -48,6 +48,13 @@ Route::get('/chandeliers', function () {
 });
 
 // Route login and register
-Route::get('/login', 'loginController@getLogin');
+Route::get('/login', 'loginController@getLogin') -> name('login');
+Route::post('/login', 'loginController@postLogin');
 // Route::post('/login', 'loginController@postLogin');	
-Route::get('/register', 'loginController@getSignup');
+Route::get('/register', 'loginController@getSignup') -> name('register');
+
+Route::get('rename-column-user', function () {
+    Schema::table('users', function (Blueprint $table) {
+        $table->renameColumn('user_password', 'password');
+    });
+});
