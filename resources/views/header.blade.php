@@ -99,11 +99,7 @@
             <a href="cart">
             <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
             </a>
-<<<<<<< HEAD
-            <a href="login">
-=======
             <a href="Login">
->>>>>>> a3db26e7f0a153e3da71b1d48ab0aabb256fd245
               <span>
                 Login
               </span>
