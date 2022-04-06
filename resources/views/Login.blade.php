@@ -18,8 +18,8 @@
         <div class="button">
           <input type="submit" value="Login">
         </div>
-        <a href="register.html">Don't have an account?</a>
+        <a href="register">Don't have an account?</a>
       </form>
     </div>
   </div>
-  @include('footer')
+ 
