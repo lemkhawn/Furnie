@@ -49,6 +49,9 @@ Route::get('/chandeliers', function () {
 Route::get('/product_detail', function () {
     return view('product_detail');
 });
+Route::get('/master', function () {
+    return view('layout.master');
+});
 
 
 // Route login and register
