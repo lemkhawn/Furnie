@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Hash;
 use Session;
+use App\Models\User;
 
 
 class loginController extends Controller
@@ -50,7 +51,7 @@ class loginController extends Controller
     public function postSignup(Request $request)
     {
         $user = new User;
-        $user->user_name = $request->user_name;
+        $user->username = $request->username;
         $user->user_fullname = $request->user_fullname;
         $user->user_email = $request->user_email;
         $user->user_phonenumber = $request->user_phonenumber;

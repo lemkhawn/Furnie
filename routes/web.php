@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,9 +25,11 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 }) -> name('index');
+
 Route::get('/products', function () {
     return view('products');
 });
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -54,10 +57,11 @@ Route::get('/chandeliers', function () {
 Route::get('/login', 'loginController@getLogin') -> name('login');
 Route::post('/login', 'loginController@postLogin');
 // Route::post('/login', 'loginController@postLogin');	
+
 Route::get('/register', 'loginController@getSignup') -> name('register');
+Route::post('/register', 'loginController@postSignup');
  
 Route::get('/getSession', 'loginController@getSession') -> name('getSession');
-
 
 // route product
 Route::get('/product', 'addProduct@showProduct') -> name('product');

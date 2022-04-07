@@ -21,21 +21,9 @@
           <div class="button">
             <input type="submit">
           </div>
-<<<<<<< HEAD
           <a href="register">Don't have an account?</a>
         </form>
       </div>
     </div>
 
     @include('footer')
-=======
-        </div>
-        <div class="button">
-          <input type="submit" value="Login">
-        </div>
-        <a href="register">Don't have an account?</a>
-      </form>
-    </div>
-  </div>
- 
->>>>>>> 9f0156bd541acd874235e41cb3d0402c55a0b12a
