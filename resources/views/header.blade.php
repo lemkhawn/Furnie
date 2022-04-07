@@ -111,13 +111,8 @@
               </span> 
               <i class="fa fa-user" aria-hidden="true"></i>
             </a>
-<<<<<<< HEAD
             <a href="{{route('register')}}">
               <span>
-=======
-            <a href="register">
-             <span>
->>>>>>> fbbf54bc3319b6496f1ffc4b94d33648a8eb8037
                 Sign up
               </span> 
               <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
@@ -127,7 +122,7 @@
   <i class="fa fa-user" aria-hidden="true"></i>
 </div>
   <ul class="dropdown-menu dropdown-menu-end">
-    <li><a class="dropdown-item" href="#">Setiings</a></li>
+    <li><a class="dropdown-item" href="#">Settings</a></li>
     <li><a class="dropdown-item" href="login">Login</a></li>
     <li><a class="dropdown-item" href="#">Logout</a></li>
   </ul>
