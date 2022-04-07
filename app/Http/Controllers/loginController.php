@@ -25,7 +25,8 @@ class loginController extends Controller
             $success = 'Login Successfully';
             return redirect()->route('index')->with('success', $info);
         } else {
-            return redirect()->back()->with('error', 'Login Failed');
+            $error = 'Login Failed';
+            return redirect()->back()->with('error', $error);
         }
     }
 

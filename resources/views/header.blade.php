@@ -90,12 +90,18 @@
             </ul>
           </div>
           <div class="quote_btn-container">
+          <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-dark btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
           <form class="form-inline">
-            <a href="">
+            <!-- <a href="">
             <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
-            </a>
+            </a> -->
             <a href="cart">
             <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
             </a>

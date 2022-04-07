@@ -49,6 +49,7 @@ Route::get('/chandeliers', function () {
     return view('chandeliers');
 });
 
+
 // Route login and register
 Route::get('/login', 'loginController@getLogin') -> name('login');
 Route::post('/login', 'loginController@postLogin');

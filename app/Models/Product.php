@@ -12,6 +12,10 @@ class Product extends Model
     use HasFactory;
     // use HasMediaTrait;
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
     protected $table = 'products';
     protected $fillable = [
         // 'productid', 
