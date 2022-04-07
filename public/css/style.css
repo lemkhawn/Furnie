@@ -6,9 +6,7 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
-*{
-  text-decoration: nones;
-}
+
 
 .layout_padding {
   padding: 90px 0;
@@ -58,6 +56,9 @@ body {
   position: relative;
   font-weight: bold;
   text-transform: uppercase;
+}
+.heading_container a{
+  text-decoration: none;
 }
 
 /*header section*/
@@ -264,6 +265,7 @@ a:focus {
   margin: 5px;
   text-align: center;
   width: 165px;
+  text-decoration: none;
 }
 
 .slider_section .detail-box .btn-box .btn1 {
@@ -275,11 +277,15 @@ a:focus {
   border: 1px solid #f89646;
   -webkit-transition: all .2s;
   transition: all .2s;
+  
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
   background-color: transparent;
   color: #f89646;
+}
+.detail-box a{
+  text-decoration: none;
 }
 
 .slider_section .detail-box .btn-box .btn2 {
@@ -384,6 +390,7 @@ a:focus {
   color: #6bb7be;
   text-transform: uppercase;
   font-size: 15px;
+  text-decoration: none;
 }
 
 .about_section {
@@ -559,6 +566,7 @@ a:focus {
   background-position: center;
   border-radius: 100%;
   margin: 0 2.5px;
+  text-decoration: none;
 }
 
 .client_section .carousel-control-prev:hover,
@@ -568,6 +576,7 @@ a:focus {
 
 .client_section .carousel-control-next {
   left: initial;
+  text-decoration: none;
 }
 
 .contact_section {
@@ -692,6 +701,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   color: #ffffff;
+  text-decoration: none;
 }
 
 .info_section .contact_nav a i {
@@ -724,6 +734,7 @@ a:focus {
   color: #ffffff;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
+  text-decoration: none;
 }
 
 .info_section .info_links .info_links_menu a:hover, .info_section .info_links .info_links_menu a.active {
