@@ -111,7 +111,15 @@
               </span>
               <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
             </a>
-            
+
+            {{-- <h1>Welcome</h1> --}}
+            @if (session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+              
+            @endif
+
             </form>
           </div>
         </div>

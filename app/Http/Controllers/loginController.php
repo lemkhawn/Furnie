@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Hash;
+use Session;
 
 
 class loginController extends Controller
@@ -15,15 +16,30 @@ class loginController extends Controller
         return view('Login');
     }
 
-    public function postLogin()
+    public function postLogin(Request $request)
     {
         $data = request()->all();
         if (Auth::attempt(['username' => $data['username'], 'password' => $data['password']])) {
-            return redirect()->route('index');
+            $info = Session::put('username', $data['username']);
+            $info = Session::put('password', $data['password']);
+            $success = 'Login Successfully';
+            return redirect()->route('index')->with('success', $info);
         } else {
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Login Failed');
         }
     }
+
+    // public function getSession() 
+    // {
+    //     if(Session::has('username')) {
+    //         // return response()->json(['session' => Session::get('username')]);
+    //         $data = Session::get('username');
+    //         $data = Session::get('password');
+    //         dd($data);
+    //     } else {
+    //         return response()->json(['session' => 'null']);
+    //     }
+    // }
 
     public function getSignup()
     {

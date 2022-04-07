@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\productController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,9 +54,12 @@ Route::get('/login', 'loginController@getLogin') -> name('login');
 Route::post('/login', 'loginController@postLogin');
 // Route::post('/login', 'loginController@postLogin');	
 Route::get('/register', 'loginController@getSignup') -> name('register');
+ 
+Route::get('/getSession', 'loginController@getSession') -> name('getSession');
 
-Route::get('rename-column-user', function () {
-    Schema::table('users', function (Blueprint $table) {
-        $table->renameColumn('user_password', 'password');
-    });
-});
+
+// route product
+Route::get('/product', 'addProduct@showProduct') -> name('product');
+
+Route::get('/addproductform', 'addProduct@addForm') -> name('addform');
+Route::post('/addproductform', 'addProduct@addProduct') -> name('addProduct');
