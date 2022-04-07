@@ -6,6 +6,9 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
+*{
+  text-decoration: nones;
+}
 
 .layout_padding {
   padding: 90px 0;
