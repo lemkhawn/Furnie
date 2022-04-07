@@ -13,7 +13,7 @@ class addProduct extends Controller
     public function addForm()
     {
         $category = Category::all();
-        return view('formAddProduct')->with('category', $category);;	
+        return view('admin.formAddProduct')->with('category', $category);;	
     }
     public function addProduct(Request $request)
     {
