@@ -32,11 +32,11 @@
           <div class="info_links_menu">
             <a class="text-foot" href="index">Home <span class="sr-only">(current)</span></a>
             <a class="text-foot" href="about"> About</a>
+            <a class="text-foot" href="blog">Blog</a>
+            <a class="text-foot" href="contact">Contact Us</a>
             <a class="text-foot" href="chair">Chair</a>
             <a class="text-foot" href="table">Table</a>
             <a class="text-foot" href="chandeliers">Chandeliers</a>
-            <a class="text-foot" href="blog">Blog</a>
-            <a class="text-foot" href="contact">Contact Us</a>
           </div>
         </div>
       </div>
@@ -82,16 +82,16 @@
           </form>
           <div class="social_box">
             <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
             </a>
             <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fab fa-twitter"></i>
             </a>
             <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <i class="fab fa-linkedin-in"></i>
             </a>
             <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fab fa-instagram"></i>
             </a>
           </div>
         </div>
@@ -109,7 +109,7 @@
 <script src="js/custom.js"></script>
 <!-- Google Map 
 <script src="https://goo.gl/maps/YhGsRJTfWxiFE4j67"></script>
-<!-- End Google Map -->
+ End Google Map -->
 
 </body>
 

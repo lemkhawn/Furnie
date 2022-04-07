@@ -818,6 +818,7 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   margin-top: 25px;
+  text-decoration: none;
 }
 
 .info_section .info_form .social_box a {
@@ -837,11 +838,13 @@ a:focus {
   color: #6bb7be;
   font-size: 18px;
   margin-right: 10px;
+  text-decoration: none;
 }
 
 .info_section .info_form .social_box a:hover {
   color: #f89646;
   border-color: #f89646;
+  text-decoration: none;
 }
 
 /* footer section*/
