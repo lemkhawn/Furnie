@@ -15,7 +15,7 @@
                         <tr>
                             <th scope="col"> </th>
                             <th scope="col">Product</th>
-                            <!-- <th scope="col">Available</th> -->
+                            <th scope="col">Available</th>
                             <th scope="col" class="text-center">Quantity</th>
                             <th scope="col" class="text-right">Price</th>
                             <th> </th>
@@ -25,7 +25,7 @@
                         <tr>
                             <td><img src="images/ghe1.png" width="70px" height="35px"> </td>
                             <td>Product Name </td>
-                            <!-- <td>In stock</td> -->
+                            <td>In stock</td>
                             <td><input class="form-control" type="text" value="1" /></td>
                             <td class="text-right">124,90 €</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
@@ -33,7 +33,7 @@
                         <tr>
                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                             <td>Product Name </td>
-                            <!-- <td>In stock</td> -->
+                            <td>In stock</td>
                             <td><input class="form-control" type="text" value="1" /></td>
                             <td class="text-right">33,90 €</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
@@ -41,7 +41,7 @@
                         <tr>
                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                             <td>Product Name </td>
-                            <!-- <td>In stock</td> -->
+                            <td>In stock</td>
                             <td><input class="form-control" type="text" value="1" /></td>
                             <td class="text-right">70,00 €</td>
                             <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>

@@ -105,18 +105,28 @@
             <a href="cart">
             <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
             </a>
-            <a href="login">
+            <!-- <a href="login">
               <span>
                 Login
-              </span>
+              </span> 
               <i class="fa fa-user" aria-hidden="true"></i>
             </a>
             <a href="register">
-              <span>
+             <span>
                 Sign up
-              </span>
+              </span> 
               <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
-            </a>
+            </a> -->
+            <div class="btn-group">
+  <div  class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa fa-user" aria-hidden="true"></i>
+</div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">Setiings</a></li>
+    <li><a class="dropdown-item" href="login">Login</a></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
+</div>
 
             {{-- <h1>Welcome</h1> --}}
             @if (session('success'))
