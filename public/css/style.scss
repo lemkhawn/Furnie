@@ -176,6 +176,9 @@ a:focus {
 .custom_nav-container .navbar-toggler {
   outline: none;
 }
+.btn-box .btn1 a{
+  text-decoration: none;
+}
 
 .custom_nav-container .navbar-toggler {
   padding: 0;
@@ -735,6 +738,7 @@ a:focus {
         color: $primary1;
         font-size: 18px;
         margin-right: 10px;
+        text-decoration: none;
 
         &:hover {
           color: $primary2;

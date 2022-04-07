@@ -50,8 +50,8 @@
         <div class="button">
           <input type="submit" value="Register">
         </div>
-        <a href="login.html">Already have an account?</a>
+        <a href="login">Already have an account?</a>
       </form>
     </div>
   </div>
-@include('footer')
+

@@ -91,16 +91,32 @@
             </ul>
           </div>
           <div class="quote_btn-container">
+          <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-dark btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
           <form class="form-inline">
-            <a href="">
+            <!-- <a href="">
             <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
-            </a>
+            </a> -->
             <a href="cart">
             <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
             </a>
-            <a href="Login">
+            <div class="btn-group">
+  <div type="button" class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fa fa-user" aria-hidden="true"></i>
+</div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">Settings</a></li>
+    <li><a class="dropdown-item" href="login">Login</a></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
+</div>
+            <!-- <a href="login">
               <span>
                 Login
               </span>
@@ -111,7 +127,7 @@
                 Sign up
               </span>
               <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
-            </a>
+            </a> -->
             
             </form>
           </div>

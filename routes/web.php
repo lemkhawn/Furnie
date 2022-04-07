@@ -50,6 +50,7 @@ Route::get('/product_detail', function () {
     return view('product_detail');
 });
 
+
 // Route login and register
 Route::get('/login', 'loginController@getLogin');
 // Route::post('/login', 'loginController@postLogin');	

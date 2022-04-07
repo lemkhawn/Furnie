@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
 }
 
+
 .layout_padding {
   padding: 90px 0;
 }
@@ -122,25 +123,6 @@ a:focus {
   padding: 0;
   border: none;
 }
-.custom_nav-container .navbar-nav .nav-item .dropdown{
-  padding: 3px 15px;
-  margin: 10px 15px;
-  color: #272727; 
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  box-shadow: none;
-} 
-
-.nav-drop{
-  align-items: center !important;
-}
-
-.text-foot a{
-  text-decoration: none !important;
-}
-
 
 .navbar-brand span {
   font-size: 24px;
@@ -219,14 +201,12 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-   
 }
 
 .quote_btn-container a {
   color: #151515;
   margin-right: 25px;
   text-transform: uppercase;
-  text-decoration: none;
 }
 
 .quote_btn-container a span {
@@ -279,7 +259,6 @@ a:focus {
   display: -ms-flexbox;
   display: flex;
   margin: 0 -5px;
-  text-decoration: none;
 }
 
 .slider_section .detail-box .btn-box a {
@@ -298,15 +277,15 @@ a:focus {
   border: 1px solid #f89646;
   -webkit-transition: all .2s;
   transition: all .2s;
-  text-decoration: none;
-}
-.detail-box a{
-  text-decoration: none;
+  
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
   background-color: transparent;
   color: #f89646;
+}
+.detail-box a{
+  text-decoration: none;
 }
 
 .slider_section .detail-box .btn-box .btn2 {
@@ -318,7 +297,6 @@ a:focus {
   border: 1px solid #6bb7be;
   -webkit-transition: all .2s;
   transition: all .2s;
-  text-decoration: none;
 }
 
 .slider_section .detail-box .btn-box .btn2:hover {
@@ -374,7 +352,7 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   height: 275px;
-  padding: 1px;
+  padding: 25px;
 }
 
 .furniture_section .box .img-box img {
@@ -588,6 +566,7 @@ a:focus {
   background-position: center;
   border-radius: 100%;
   margin: 0 2.5px;
+  text-decoration: none;
 }
 
 .client_section .carousel-control-prev:hover,
@@ -597,6 +576,7 @@ a:focus {
 
 .client_section .carousel-control-next {
   left: initial;
+  text-decoration: none;
 }
 
 .contact_section {
@@ -705,10 +685,6 @@ a:focus {
   text-align: center;
 }
 
-a{
-  text-decoration: none !important;
-}
-
 .info_section .contact_nav a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -725,7 +701,7 @@ a{
       -ms-flex-align: center;
           align-items: center;
   color: #ffffff;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .info_section .contact_nav a i {
@@ -734,13 +710,10 @@ a{
 
 .info_section .contact_nav a:hover {
   color: #f89646;
-  text-decoration: none;
-
 }
 
 .info_section .info_top {
   padding: 45px 0;
-  text-decoration: none;
 }
 
 .info_section h4 {
@@ -762,13 +735,10 @@ a{
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   text-decoration: none;
-
 }
 
 .info_section .info_links .info_links_menu a:hover, .info_section .info_links .info_links_menu a.active {
   color: #f89646;
-  text-decoration: none;
-
 }
 
 .info_section .info_post .post_box {
@@ -848,6 +818,7 @@ a{
   display: -ms-flexbox;
   display: flex;
   margin-top: 25px;
+  text-decoration: none;
 }
 
 .info_section .info_form .social_box a {
@@ -867,11 +838,13 @@ a{
   color: #6bb7be;
   font-size: 18px;
   margin-right: 10px;
+  text-decoration: none;
 }
 
 .info_section .info_form .social_box a:hover {
   color: #f89646;
   border-color: #f89646;
+  text-decoration: none;
 }
 
 /* footer section*/
