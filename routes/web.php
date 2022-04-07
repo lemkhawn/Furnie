@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\User;
+use App\Http\Controllers\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -76,3 +78,14 @@ Route::get('/product', 'addProduct@showProduct') -> name('product');
 
 Route::get('/addproductform', 'addProduct@addForm') -> name('addform');
 Route::post('/addproductform', 'addProduct@addProduct') -> name('addProduct');
+
+// route category
+Route::group(['prefix' => 'cate'], function() 
+{
+    Route::get('/category', 'CategoryController@showCategory') -> name('category');
+    Route::get('/addcategoryform', 'CategoryController@addCate') -> name('addCategoryForm');
+    Route::post('/addcategoryform', 'CategoryController@addCategory') -> name('addCategory');
+    Route::get('/editcategoryform/{id}', 'CategoryController@editCate') -> name('editCategoryForm');
+    Route::post('/editcategoryform/{id}', 'CategoryController@editCategory') -> name('editCategory');
+    Route::get('/deletecategoryform/{id}', 'CategoryController@deleteCategory') -> name('deleteCategory');
+});
