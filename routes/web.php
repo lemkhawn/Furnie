@@ -56,11 +56,19 @@ Route::get('/chandeliers', function () {
 // Route login and register
 Route::get('/login', 'loginController@getLogin') -> name('login');
 Route::post('/login', 'loginController@postLogin');
-// Route::post('/login', 'loginController@postLogin');	
 
 Route::get('/register', 'loginController@getSignup') -> name('register');
 Route::post('/register', 'loginController@postSignup');
- 
+
+// Route edit and delete user
+Route::group(['prefix' => 'user'], function() 
+{
+    Route::get('/listUser/', 'loginController@listUser') -> name('listUser');
+    Route::get('/editUser/{id}', 'loginController@getEditUser') -> name('editUser');
+    Route::post('/editUser/{id}', 'loginController@postEditUser');
+    Route::get('/deleteUser/{id}', 'loginController@deleteUser') -> name('deleteUser');
+});
+
 Route::get('/getSession', 'loginController@getSession') -> name('getSession');
 
 // route product

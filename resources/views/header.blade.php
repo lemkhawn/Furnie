@@ -111,7 +111,7 @@
               </span>
               <i class="fa fa-user" aria-hidden="true"></i>
             </a>
-            <a href="register">
+            <a href="{{route('register')}}">
               <span>
                 Sign up
               </span>
