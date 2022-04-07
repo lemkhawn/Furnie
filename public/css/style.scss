@@ -8,6 +8,9 @@ $bgColor:#f9fafa;
   font-family: "Poppins", sans-serif;
 }
 
+* {
+  text-decoration: none;
+}
 
 
 @mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
@@ -175,6 +178,9 @@ a:focus {
 
 .custom_nav-container .navbar-toggler {
   outline: none;
+}
+.btn-box .btn1 a{
+  text-decoration: none;
 }
 
 .custom_nav-container .navbar-toggler {

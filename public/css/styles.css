@@ -69,7 +69,9 @@
 *::after {
   box-sizing: border-box;
 }
-
+*{
+  text-decoration: none;
+}
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -95,6 +97,11 @@ hr {
   background-color: currentColor;
   border: 0;
   opacity: 0.25;
+}
+.navbar-dark .navbar-brand{
+  color: #000;
+  text-align: center;
+ 
 }
 
 hr:not([size]) {
@@ -11698,4 +11705,7 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
+}
+.btn-box a .btn1 {
+  text-decoration: none;
 }
