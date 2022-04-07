@@ -46,6 +46,10 @@ Route::get('/table', function () {
 Route::get('/chandeliers', function () {
     return view('chandeliers');
 });
+Route::get('/add', function () {
+    return view('add');
+});
+
 
 // Route login and register
 Route::get('/login', 'loginController@getLogin');

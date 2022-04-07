@@ -8,9 +8,7 @@
         <h2>
           Our Furnitures
         </h2>
-        <p>
-          which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't an
-        </p>
+        
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-4">
