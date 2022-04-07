@@ -25,7 +25,7 @@
           </div>
           <div class="input-box-r">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required name="user_password">
+            <input type="password" placeholder="Enter your password" required name="user_password">
           </div>
           <div class="input-box-r">
             <span class="details">Gender</span>
