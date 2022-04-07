@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 // Basic routes 
 
-Route::get('/admin', function () {
-    return view('admin');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 Route::get('/index', function () {
@@ -45,9 +45,6 @@ Route::get('/table', function () {
 });
 Route::get('/chandeliers', function () {
     return view('chandeliers');
-});
-Route::get('/add', function () {
-    return view('add');
 });
 
 
