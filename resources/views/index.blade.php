@@ -1,4 +1,5 @@
 @include('header')
+
     <!-- slider section -->
     <section class="slider_section long_section">
       <div id="customCarousel" class="carousel slide" data-ride="carousel">

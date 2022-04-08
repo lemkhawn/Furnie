@@ -1,4 +1,5 @@
 @include('header')
+@include('admin.navigationBar')
 
 <form action="" method="post" style="width: 80%; margin: 10px auto">
     @csrf

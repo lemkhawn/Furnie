@@ -36,6 +36,8 @@ class loginController extends Controller
         }
     }
 
+
+
     // public function getSession() 
     // {
     //     if(Session::has('username')) {
@@ -70,7 +72,7 @@ class loginController extends Controller
     public function getEditUser($id) 
     {
         $data['user'] = User::find($id);
-        return view('admin.formUpdate', $data);
+        return view('admin.editUser', $data);
     }
 
     public function postEditUser(Request $request)

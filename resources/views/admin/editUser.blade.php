@@ -1,4 +1,5 @@
 @include('header');
+@include('admin.navigationBar')
 
 <form action="" method="post" style="width: 80%; margin:10px auto; background-color:#FFFFFF; border-radius: 8px ">
     @csrf
@@ -36,5 +37,6 @@
             <input type="text" class="form-control" id="user_role" name="user_role" value="{{ $user->user_role }}">
         </div>
     </div>
+    
     <button type="submit" class="btn btn-primary" style="margin:10px 0px; width:100%">Submit</button>
 </form>

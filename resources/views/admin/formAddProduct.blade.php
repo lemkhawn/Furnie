@@ -1,4 +1,5 @@
 @include('header');
+@include('admin.navigationBar')
 
 <form action="#" method="post" enctype="multipart/form-data" style="width: 80%; margin: 10px auto" >
     @csrf
@@ -19,6 +20,8 @@
             <label for="color">Color</label>
             <input type="text" class="form-control" id="color" name="color" rows="3"></input>
         </div>
+        
+
     </div>
     <div class="row">
         <div class="form-group col-xl-4">

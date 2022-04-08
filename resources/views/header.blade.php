@@ -118,24 +118,15 @@
               <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
             </a> -->
             <div class="btn-group">
-  <div  class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-  <i class="fa fa-user" aria-hidden="true"></i>
-</div>
-  <ul class="dropdown-menu dropdown-menu-end">
-    <li><a class="dropdown-item" href="#">Settings</a></li>
-    <li><a class="dropdown-item" href="login">Login</a></li>
-    <li><a class="dropdown-item" href="#">Logout</a></li>
-  </ul>
-</div>
-
-            {{-- <h1>Welcome</h1> --}}
-            @if (session('success'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('success') }}
-                </div>
-              
-            @endif
-
+                <div  class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
             </form>
           </div>
         </div>
