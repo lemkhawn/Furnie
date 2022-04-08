@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Hash;
-use Session;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 
@@ -17,15 +17,20 @@ class loginController extends Controller
         return view('Login');
     }
 
-    public function postLogin(Request $request)
+    
+
+    public function postLogin(UserRequest $request)
     {
+        dd($request);
         $data = request()->all();
         if (Auth::attempt(['username' => $data['username'], 'password' => $data['password']])) {
-            $info = Session::put('username', $data['username']);
-            $info = Session::put('password', $data['password']);
+            // $info = Session::put('username', $data['username']);
+            // $info = Session::put('password', $data['password']);
+            dd($data);
             $success = 'Login Successfully';
-            return redirect()->route('index')->with('success', $info);
+            return redirect()->route('index')->with('success', $success);
         } else {
+            dd('Failed');
             $error = 'Login Failed';
             return redirect()->back()->with('error', $error);
         }
