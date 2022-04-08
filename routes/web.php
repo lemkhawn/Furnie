@@ -54,6 +54,8 @@ Route::get('/chandeliers', function () {
     return view('chandeliers');
 });
 
+Route::get('navi', 'navController@getNav');
+
 
 // Route login and register
 Route::get('/login', 'loginController@getLogin') -> name('login');
@@ -74,10 +76,19 @@ Route::group(['prefix' => 'user'], function()
 Route::get('/getSession', 'loginController@getSession') -> name('getSession');
 
 // route product
-Route::get('/product', 'addProduct@showProduct') -> name('product');
+Route::group(['prefix' => 'product'], function() 
+{
+    Route::get('/listProduct/', 'addProduct@listProduct') -> name('listProduct');
+    Route::get('/addProduct/', 'addProduct@getAddProduct') -> name('addProduct');
+    Route::post('/addProduct/', 'addProduct@postAddProduct');
+    Route::get('/editProduct/{id}', 'addProduct@getEditProduct') -> name('editProduct');
+    Route::post('/editProduct/{id}', 'addProduct@postEditProduct');
+    Route::get('/deleteProduct/{id}', 'addProduct@deleteProduct') -> name('deleteProduct');
+});
 
-Route::get('/addproductform', 'addProduct@addForm') -> name('addform');
-Route::post('/addproductform', 'addProduct@addProduct') -> name('addProduct');
+// Route::get('/product', 'addProduct@showProduct') -> name('product');
+// Route::get('/addproductform', 'addProduct@addForm') -> name('addform');
+// Route::post('/addproductform', 'addProduct@addProduct') -> name('addProduct');
 
 // route category
 Route::group(['prefix' => 'cate'], function() 

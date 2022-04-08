@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\File;
 class addProduct extends Controller
 {
     //
-    public function addForm()
+    public function getAddProduct()
     {
         $category = Category::all();
         return view('admin.formAddProduct')->with('category', $category);;	
     }
-    public function addProduct(Request $request)
+    public function postAddProduct(Request $request)
     {
         //
         if ($request->isMethod('POST')) {
@@ -37,16 +37,17 @@ class addProduct extends Controller
             $product->category_id = $request->category_id;
             $product->description = $request->description;
             $product->save();
-            return redirect()->route('product')-> with('success', 'Product has been added');
+            return redirect()->route('listProduct')-> with('success', 'Product has been added');
         }
     }
 
 
-    public function showProduct()
+    public function listProduct()
     {
         //
+        // $category = Category::all();
         $product = Product::all();
-        return view('showProduct', ['product' => $product]);
+        return view('admin.showProduct', ['product' => $product] );
     }
 
     public function showProductByCategory($id)
@@ -56,8 +57,33 @@ class addProduct extends Controller
         return view('showProduct', ['product' => $product]);
     }
      
-    public function store()
+    public function getEditProduct( $id)
     {
+        //
+        $category = Category::all();
+        $product = Product::find($id);
+        return view('admin.editProduct', ['product' => $product], ['category' => $category]);
+    }
 
+    public function postEditProduct(Request $request,$id) 
+    {
+        //
+        $product = Product::find($id);
+        $product->productname = $request->productname;
+        $product->price = $request->price;
+        $product->size = $request->size;
+        $product->color = $request->color;
+        $product->category_id = $request->category_id;
+        $product->description = $request->description;
+        $product->save();
+        return redirect()->route('listProduct')-> with('success', 'Product has been updated');
+    }
+
+    public function deleteProduct($id)
+    {
+        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('listProduct')-> with('success', 'Product has been deleted');
     }
 }

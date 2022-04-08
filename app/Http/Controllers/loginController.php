@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Hash;
-use Session;
+//use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+// use Session;
 use App\Models\User;
+use Auth;
 
 
 class loginController extends Controller
@@ -19,17 +20,21 @@ class loginController extends Controller
 
     public function postLogin(Request $request)
     {
-        $data = request()->all();
-        if (Auth::attempt(['username' => $data['username'], 'password' => $data['password']])) {
-            $info = Session::put('username', $data['username']);
-            $info = Session::put('password', $data['password']);
-            $success = 'Login Successfully';
-            return redirect()->route('index')->with('success', $info);
+        $arr = ['username' => $request->username, 'password' => $request->password];
+        if(Auth::attempt($arr)) {
+            $success = 'Login success';
+            if(Auth::user()->user_role == 'admin') {
+                return redirect()->route('listProduct');
+            } else {
+                return redirect()->route('index');
+            }
+            // return redirect()->route('index')->with('success', $success);
         } else {
-            $error = 'Login Failed';
-            return redirect()->back()->with('error', $error);
+            return redirect()->back()->with('error', 'Login Failed');
         }
     }
+
+
 
     // public function getSession() 
     // {
@@ -65,7 +70,7 @@ class loginController extends Controller
     public function getEditUser($id) 
     {
         $data['user'] = User::find($id);
-        return view('admin.formUpdate', $data);
+        return view('admin.editUser', $data);
     }
 
     public function postEditUser(Request $request)

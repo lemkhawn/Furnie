@@ -1,4 +1,5 @@
 @include('header')
+@include('admin.navigationBar')
 
 
 <table style="width: 80%; margin: 10px auto" class="table table-striped">
