@@ -1,7 +1,7 @@
-@include('header')
-@include('admin.navigationBar')
-
-
+{{-- @include('header') --}}
+{{-- @include('admin.navigationBar') --}}
+@extends('admin.admin')
+@section('listCategory')
 <table style="width: 80%; margin: 10px auto" class="table table-striped">
     <thead>
         <tr>
@@ -27,3 +27,4 @@
         @endforeach
     </tbody>
 </table>
+@endsection

@@ -1,6 +1,8 @@
-@include('header');
-@include('admin.navigationBar')
-
+{{-- @include('header'); --}}
+{{-- @include('admin.navigationBar') --}}
+@extends('admin.admin')
+{{-- @include('admin.admin') --}}
+@section('editUser/{{$user->id}}')
 <form action="" method="post" style="width: 80%; margin:10px auto; background-color:#FFFFFF; border-radius: 8px ">
     @csrf
     <div class="row">
@@ -40,3 +42,4 @@
     
     <button type="submit" class="btn btn-primary" style="margin:10px 0px; width:100%">Submit</button>
 </form>
+@endsection

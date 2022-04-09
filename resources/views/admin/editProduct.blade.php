@@ -1,6 +1,7 @@
-@include('header')
-@include('admin.navigationBar')
-
+{{-- @include('header') --}}
+{{-- @include('admin.navigationBar') --}}
+@extends('admin.admin')
+@section('editProduct')
 <form action="" method="post" enctype="multipart/form-data" style="width: 80%; margin: 10px auto" >
     @csrf
     <div class="form-group">
@@ -43,3 +44,4 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
+@endsection
