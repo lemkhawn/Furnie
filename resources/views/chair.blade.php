@@ -8,7 +8,6 @@
         <h2>
           Our Furniture
         </h2>
-        
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-4">
