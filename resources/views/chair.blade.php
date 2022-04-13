@@ -11,18 +11,20 @@
         
       </div>
       <div class="row">
+        @foreach ($products as $value )
+          
         <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="images/f1.png" alt="">
+              <img src="{{asset('../images/products/'.$value->images)}}" alt="">
             </div>
             <div class="detail-box">
-              <h5>
-                brown Chair Design
-              </h5>
+              <a href="{{route('detail', $value -> id)}}">
+                <h5>  {{$value->productname}}</h5>  
+              </a>
               <div class="price_box">
                 <h6 class="price_heading">
-                  <span>$</span> 100.00
+                  <span>$</span> {{$value->price}}
                 </h6>
                 <a href="">
                   Buy Now
@@ -31,7 +33,10 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
+
+        @endforeach
+
+        {{-- <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="img-box">
               <img src="images/f2.png" alt="">
@@ -130,7 +135,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </section>
