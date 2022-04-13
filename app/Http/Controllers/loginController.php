@@ -19,20 +19,19 @@ class loginController extends Controller
 
     
 
-    public function postLogin(UserRequest $request)
+    public function postLogin(Request $request)
     {
-        dd($request);
-        $data = request()->all();git 
-        if (Auth::attempt(['username' => $data['username'], 'password' => $data['password']])) {
-            // $info = Session::put('username', $data['username']);
-            // $info = Session::put('password', $data['password']);
-            dd($data);
-            $success = 'Login Successfully';
-            return redirect()->route('index')->with('success', $success);
+        $arr = ['username' => $request->username, 'password' => $request->password];
+        if(Auth::attempt($arr)) {
+            $success = 'Login success';
+            if(Auth::user()->user_role == 'admin') {
+                return redirect()->route('listProduct');
+            } else {
+                return redirect()->route('index');
+            }
+            // return redirect()->route('index')->with('success', $success);
         } else {
-            dd('Failed');
-            $error = 'Login Failed';
-            return redirect()->back()->with('error', $error);
+            return redirect()->back()->with('error', 'Login Failed');
         }
     }
 
