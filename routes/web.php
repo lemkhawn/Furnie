@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\productController;
+// use App\Http\Controllers\productController;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Category;
 
@@ -53,6 +53,9 @@ Route::get('/table', function () {
 Route::get('/chandeliers', function () {
     return view('chandeliers');
 });
+Route::get('/admin', function () {
+    return view('admin.admin');
+});
 
 Route::get('navi', 'navController@getNav');
 
@@ -65,38 +68,38 @@ Route::get('/register', 'loginController@getSignup') -> name('register');
 Route::post('/register', 'loginController@postSignup');
 
 // Route edit and delete user
-Route::group(['prefix' => 'user'], function() 
-{
+// Route::group(['prefix' => 'user'], function() 
+// {
     Route::get('/listUser/', 'loginController@listUser') -> name('listUser');
     Route::get('/editUser/{id}', 'loginController@getEditUser') -> name('editUser');
     Route::post('/editUser/{id}', 'loginController@postEditUser');
     Route::get('/deleteUser/{id}', 'loginController@deleteUser') -> name('deleteUser');
-});
+// });
 
 Route::get('/getSession', 'loginController@getSession') -> name('getSession');
 
 // route product
-Route::group(['prefix' => 'product'], function() 
-{
+// Route::group(['prefix' => 'product'], function() 
+// {
     Route::get('/listProduct/', 'addProduct@listProduct') -> name('listProduct');
     Route::get('/addProduct/', 'addProduct@getAddProduct') -> name('addProduct');
     Route::post('/addProduct/', 'addProduct@postAddProduct');
     Route::get('/editProduct/{id}', 'addProduct@getEditProduct') -> name('editProduct');
     Route::post('/editProduct/{id}', 'addProduct@postEditProduct');
     Route::get('/deleteProduct/{id}', 'addProduct@deleteProduct') -> name('deleteProduct');
-});
+// });
 
 // Route::get('/product', 'addProduct@showProduct') -> name('product');
 // Route::get('/addproductform', 'addProduct@addForm') -> name('addform');
 // Route::post('/addproductform', 'addProduct@addProduct') -> name('addProduct');
 
 // route category
-Route::group(['prefix' => 'cate'], function() 
-{
-    Route::get('/category', 'CategoryController@showCategory') -> name('category');
-    Route::get('/addcategoryform', 'CategoryController@addCate') -> name('addCategoryForm');
+// Route::group(['prefix' => 'cate'], function() 
+// {
+    Route::get('/listCategory', 'CategoryController@showCategory') -> name('listCategory');
+    Route::get('/addcategoryform', 'CategoryController@addCate') -> name('addCategory');
     Route::post('/addcategoryform', 'CategoryController@addCategory') -> name('addCategory');
     Route::get('/editcategoryform/{id}', 'CategoryController@editCate') -> name('editCategoryForm');
     Route::post('/editcategoryform/{id}', 'CategoryController@editCategory') -> name('editCategory');
     Route::get('/deletecategoryform/{id}', 'CategoryController@deleteCategory') -> name('deleteCategory');
-});
+// });

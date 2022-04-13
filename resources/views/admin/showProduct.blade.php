@@ -1,6 +1,7 @@
-@include('header');
-@include('admin.navigationBar')
-
+{{-- @include('header'); --}}
+{{-- @include('admin.navigationBar') --}}
+@extends('admin.admin')
+@section('listProduct')
 </nav>
 
     <table class="table">
@@ -10,7 +11,7 @@
               <th scope="col">Product Name</th>
               <th scope="col">Price</th>
               <th scope="col">Size</th>
-              <th scope="col">Image</th>
+              <th scope="col" style="text-align: center">Image</th>
               <th scope="col">Category</th>
               <th scope="col">Description</th>
               <th colspan="2" style="text-align: center">Function</th>
@@ -23,7 +24,7 @@
                 <td>{{$value->productname}}</td>
                 <td>{{$value->price}}</td>
                 <td>{{$value->size}}</td>
-                <td><img src=" {{ asset('images/products/'.$value->images)}} " alt="" style="width: 200px"></td>
+                <td><img src=" {{ asset('images/products/'.$value->images)}} " alt="" style="width: 200px; height:200px; object-fit:contain"></td>
                 
 
                 <td>{{$value->category_id}}</td>
@@ -38,4 +39,4 @@
           </tbody>
           @endforeach
     </table>
-    
+    @endsection
