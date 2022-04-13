@@ -35,7 +35,7 @@
 
         @endforeach
 
-        {{-- <div class="col-md-6 col-lg-4">
+        <!-- {{-- <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="img-box">
               <img src="images/f2.png" alt="">
@@ -134,7 +134,7 @@
               </div>
             </div>
           </div>
-        </div> --}}
+        </div>  -->
       </div>
     </div>
   </section>
