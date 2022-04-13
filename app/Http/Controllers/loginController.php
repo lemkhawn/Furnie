@@ -22,7 +22,7 @@ class loginController extends Controller
     public function postLogin(UserRequest $request)
     {
         dd($request);
-        $data = request()->all();
+        $data = request()->all();git 
         if (Auth::attempt(['username' => $data['username'], 'password' => $data['password']])) {
             // $info = Session::put('username', $data['username']);
             // $info = Session::put('password', $data['password']);
