@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-8">
             <div class="product_img text-center">
-                <img src="{{asset('../images/products/'.$product->images)}}" alt="" style="height: 400px">
+                <img src="{{asset('/images/products/'.$product->images)}}" alt="" style="height: 400px">
             </div>
         </div>
         <div class="col-lg-4">

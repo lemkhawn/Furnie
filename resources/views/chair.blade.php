@@ -15,7 +15,7 @@
         <div class="col-md-6 col-lg-4">
           <div class="box">
             <div class="img-box">
-              <img src="{{asset('../images/products/'.$value->images)}}" alt="">
+              <img src="{{asset('images/products/'.$value->images)}}" alt="">
             </div>
             <div class="detail-box">
               <a href="{{route('detail', $value -> id)}}">
