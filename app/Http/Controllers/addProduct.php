@@ -86,4 +86,6 @@ class addProduct extends Controller
         $product->delete();
         return redirect()->route('listProduct')-> with('success', 'Product has been deleted');
     }
+
+    
 }

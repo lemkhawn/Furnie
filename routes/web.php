@@ -25,6 +25,7 @@ Route::get('/', function () {
 });
 
 Route::get('/index', function () {
+    $product = DB::table('products')->get();
     return view('index');
 }) -> name('index');
 
@@ -43,9 +44,6 @@ Route::get('/about', function () {
 });
 Route::get('/cart', function () {
     return view('cart');
-});
-Route::get('/chair', function () {
-    return view('chair');
 });
 Route::get('/table', function () {
     return view('table');
@@ -103,3 +101,13 @@ Route::get('/getSession', 'loginController@getSession') -> name('getSession');
     Route::post('/editcategoryform/{id}', 'CategoryController@editCategory') -> name('editCategory');
     Route::get('/deletecategoryform/{id}', 'CategoryController@deleteCategory') -> name('deleteCategory');
 // });
+
+Route::get('/chair', function () {
+    $products = DB::table('products')->get();
+    return view('chair', ['products' => $products]);
+});
+
+Route::get('detail/{id}', function ($id) {
+    $product = DB::table('products')->where('id', $id)->first();
+    return view('detailProduct', ['product' => $product]);
+}) -> name('detail');
