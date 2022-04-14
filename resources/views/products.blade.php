@@ -219,6 +219,29 @@
             </div>
           </div>
         </div>
+
+        {{-- @foreach ($product as $key => $value) )
+        <div class="col-md-6 col-lg-4">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{ asset('images/products'.$value->images) }}" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {{ $value->name }}
+              </h5>
+              <div class="price_box">
+                <h6 class="price_heading">
+                  <span>$</span> {{ $value->price }}
+                </h6>
+                <a href="">
+                  Buy Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endforeach --}}
       </div>
     </div>
   </section>

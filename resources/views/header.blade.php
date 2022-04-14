@@ -28,7 +28,7 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="css/R-L.css">
@@ -41,7 +41,7 @@
     <!-- header section stravbar-nats -->
     <header class="header_section long_section px-0">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index">
+        <a class="navbar-brand" href="{{route('index')}}">
           <span>
             FURNIE
           </span>
@@ -54,7 +54,7 @@
           <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
             <ul class="navbar-nav ">
               <li class="nav-item active">
-                <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about"> About</a>
@@ -106,29 +106,28 @@
             <a href="cart">
             <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
             </a>
-            <div class="btn-group">
-  <div type="button" class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-  <i class="fa fa-user" aria-hidden="true"></i>
-</div>
-  <ul class="dropdown-menu dropdown-menu-end">
-    <li><a class="dropdown-item" href="#">Settings</a></li>
-    <li><a class="dropdown-item" href="login">Login</a></li>
-    <li><a class="dropdown-item" href="#">Logout</a></li>
-  </ul>
-</div>
             <!-- <a href="login">
               <span>
                 Login
-              </span>
+              </span> 
               <i class="fa fa-user" aria-hidden="true"></i>
             </a>
-            <a href="Register">
+            <a href="{{route('register')}}">
               <span>
                 Sign up
-              </span>
+              </span> 
               <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
             </a> -->
-            
+            <div class="btn-group">
+                <div  class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
             </form>
           </div>
         </div>

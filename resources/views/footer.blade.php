@@ -1,6 +1,6 @@
-<section class="info_section long_section">
-
-<div class="container">
+<section class="info_section long_section" style="margin: 0px">
+{{-- css margin long section - Kien change --}}
+<div class="container-fluid">
   <div class="contact_nav">
     <a class="text-foot" href="contact">
       <i class="fa fa-phone" aria-hidden="true"></i>
