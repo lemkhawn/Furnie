@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\Article;
+use App\Http\Controllers\UserController;
 // use App\Http\Controllers\productController;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Category;
@@ -39,9 +46,9 @@ Route::get('/contact', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/about', function () {
+// //     return view('about');
+// });
 Route::get('/cart', function () {
     return view('cart');
 });
@@ -111,3 +118,18 @@ Route::get('detail/{id}', function ($id) {
     $product = DB::table('products')->where('id', $id)->first();
     return view('detailProduct', ['product' => $product]);
 }) -> name('detail');
+
+
+Route::get('/showArticle', 'ArticleController@showArticle') -> name('showArticle');
+Route::get('/showAdminArticle', 'ArticleController@showArticle') -> name('showAdminArticle');
+Route::get('/addArticle', 'ArticleController@addArticle') -> name('addArticle');
+
+Route::get('detailArticle/{id}', function ($id) {
+    $article = DB::table('articles')->where('id', $id)->first();
+    return view('detailArticle', ['article' => $article]);
+}) -> name('detailArticle');
+
+Route::post('/addArticle', 'ArticleController@postArticle');
+Route::get('/editArticle/{id}', 'ArticleController@getEditArticle') -> name('editArticle');
+Route::post('/editArticle/{id}', 'ArticleController@postEditArticle');
+Route::get('/deleteArticle/{id}', 'ArticleController@deleteArticle') -> name('deleteArticle');

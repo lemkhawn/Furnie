@@ -80,7 +80,7 @@
                       <a href="contact" class="btn1">
                         Contact Us
                       </a>
-                      <a href="about" class="btn2">
+                      <a href="showArticle" class="btn2">
                         About Us
                       </a>
                     </div>

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+<<<<<<< HEAD
+=======
+// use Auth;
+>>>>>>> 45fb6cbc63da18de799162211d3032bbef1bd736
 
 
 class loginController extends Controller
