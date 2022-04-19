@@ -6,84 +6,99 @@
      </div>
 </section>-->
 
-<div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Available</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src="images/ghe1.png" width="70px" height="35px"> </td>
-                            <td>Product Name </td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">124,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name </td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">33,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name </td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">70,00 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Price</td>
-                            <td class="text-right">255,90 €</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Shipping</td>
-                            <td class="text-right">6,90 €</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>346,90 €</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col mb-2">
-            <div class="row">
-                <div class="col-sm-12  col-md-6">
-                    <a class="btn btn-block btn-light" href="index">Continue Shopping</a>
+<section class="vh-100" style="background-color: #fdccbc;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <p><span class="h2">Shopping Cart </span><span class="h4">(1 item in your cart)</span></p>
+        
+          <div class="card mb-4">
+            <div class="card-body p-4">
+
+              @foreach ($cart as $item)
+              
+              {{-- <form action="{{route('deleteProductOnCart/'.$item->'cart.id')}}" method="post"> --}}
+
+                <div class="row align-items-center justify-content-between">
+                  <div class="col-md-2">
+                    <img src="{{asset('../images/products/'.$item->images)}}" class="img-fluid" alt="Generic placeholder image">
+                  </div>
+                  <div class="col-md-2 d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-2">Name</p>
+                      <p class="lead fw-normal mb-0">{{$item->productname}}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-2 d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-2">Color</p>
+                      <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i>{{$item->color}}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-1 d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-2">Quantity</p>
+                      <input type="number" style="width: 50%" value="1" class="lead fw-normal mb-0" onkeyup="mult(this.value)"></input>
+                    </div>
+                  </div>
+                  <div class="col-md-1 d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-2">Price</p>
+                      <p class="lead fw-normal mb-0" onkeyup="this.price">${{$item->price}}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-2 d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-2">Delete</p>
+                      <a type="submit" href="{{route('deleteProductOnCart',$item->id)}}" class="btn btn-danger">
+                          Delete
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
-                </div>
+
+              {{-- </form> --}}
+
+
+              @endforeach
+  
             </div>
+          </div>
+  
+          <div class="card mb-5">
+            <div class="card-body p-4">
+  
+              <div class="float-end">           
+                <p class="mb-0 me-5 d-flex align-items-center">
+                  <span class="small text-muted me-2">Order total:</span> <span class="lead fw-normal">
+                    ${{$cart->sum('price')}}
+                  </span>
+                </p>
+              </div>
+  
+            </div>
+          </div>
+
+          <form action="" method="post">
+            @csrf
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button>
+              <button type="submit" class="btn btn-primary btn-lg">Checkout and get Bill</button>
+            </div>
+
+          </form>
+  
         </div>
+      </div>
     </div>
-</div>
+  </section>
 @include('footer')
+
+<script>
+  function mult(value)
+  {
+    var x;
+    x = price * value;
+    document.getElementById("subTotal").value = x;
+  }
+</script>

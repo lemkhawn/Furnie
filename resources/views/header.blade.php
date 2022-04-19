@@ -97,39 +97,51 @@
                 </div>
             </form>
           <form class="form-inline">
-            <!-- <a href="">
-            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </a> -->
-            <a href="cart">
+
+            <a href="{{route('getCart')}}">
             <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
             </a>
-            <!-- <a href="login">
-              <span>
-                Login
-              </span> 
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </a>
-            <a href="{{route('register')}}">
-              <span>
-                Sign up
-              </span> 
-              <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
-            </a> -->
+
             <div class="btn-group">
-                <div  class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              @if (Auth::check())
+              <div  class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-user" aria-hidden="true"></i>
-            </div>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
-                </ul>
-            </div>
+                <a href="" style="margin: 0px; text-decoration: none">{{Auth::user()->username}}</a>
+              </div>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                {{-- <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li> --}}
+                <li>
+                  <a href="{{route('logout')}}" class="dropdown-item">Log out
+                    <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+              </div>
+              @else
+                <button class="btn btn-outline-info text-center login">
+                  <a href="{{ route('login') }}" style="margin: 0px; text-decoration:none">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>
+                      Login
+                    </span> 
+                    {{-- <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i> --}}
+                  </a>
+                </button>
+              @endif
             </form>
           </div>
         </div>
       </nav>
     </header>
     <!-- end header section -->
+<style>
+  .login:hover .fa-user
+  {
+    color: #fff;
+  }
+  .login:hover span
+  {
+    color: #fff;
+  }
+</style>

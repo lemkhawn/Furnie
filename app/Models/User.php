@@ -54,7 +54,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function getAuthPassword()
-{
-     return $this->attributes['password'];
-}
+    {
+        return $this->attributes['password'];
+    }
+
+    // public function linkCart()
+    // {
+    //     return $this->hasMany('App\Models\Cart', 'id','user_id');
+    // }
 }

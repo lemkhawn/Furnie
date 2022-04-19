@@ -99,4 +99,10 @@ class loginController extends Controller
         $user->delete();
         return redirect()->route('listUser');
     }
+
+    public function getLogout() 
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }

@@ -27,4 +27,9 @@ class Product extends Model
         'category_id', 
         'description'
     ];
+
+    // public function linkCart()
+    // {
+    //     return $this->hasMany('App\Cart' , 'id', 'product_id');
+    // }
 }

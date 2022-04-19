@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Category;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,7 @@ use App\Http\Controllers\Category;
 // Basic routes 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('404page');
 });
 
 Route::get('/index', function () {
@@ -42,9 +43,7 @@ Route::get('/blog', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});
+
 Route::get('/table', function () {
     return view('table');
 });
@@ -61,7 +60,7 @@ Route::get('navi', 'navController@getNav');
 // Route login and register
 Route::get('/login', 'loginController@getLogin') -> name('login');
 Route::post('/login', 'loginController@postLogin');
-
+Route::get('/logout', 'loginController@getLogout') -> name('logout');
 Route::get('/register', 'loginController@getSignup') -> name('register');
 Route::post('/register', 'loginController@postSignup');
 
@@ -111,3 +110,14 @@ Route::get('detail/{id}', function ($id) {
     $product = DB::table('products')->where('id', $id)->first();
     return view('detailProduct', ['product' => $product]);
 }) -> name('detail');
+// Route::get('addToCart/{id}', 'CartController@addToCart') -> name('addToCart');
+Route::post('/detail/{id}', 'CartController@getAddToCart') -> name('detail');
+
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
+
+Route::get('/getCart', 'CartController@getCart') -> name('getCart');
+Route::post('/getCart', 'CartController@postCartToBill') -> name('postCart');
+
+Route::get('deleteProductOnCart/{id}', 'CartController@getReduceByOne')->name('deleteProductOnCart');
