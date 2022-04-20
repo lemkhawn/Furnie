@@ -474,7 +474,7 @@
   <!-- end client section -->
 
   <!-- contact section -->
-  <section class="contact_section  long_section">
+  <section class="contact_section  long_section" id="contact_section">
     <div class="container">
       <div class="row">
         <div class="col-md-6">

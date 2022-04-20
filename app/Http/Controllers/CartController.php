@@ -36,7 +36,7 @@ class CartController extends Controller
             $cart = DB::table('carts')
                 ->join('products', 'products.id', '=', 'carts.product_id')
                 ->join('users', 'users.id', '=', 'carts.user_id')
-                ->select('carts.id','products.productname', 'products.price', 'products.images','products.color', 'users.username')
+                ->select('carts.*','products.productname', 'products.price', 'products.images','products.color', 'users.username')
                 ->where('users.id', Auth::user()->id)
                 ->get();
             $total = 0;
@@ -45,6 +45,8 @@ class CartController extends Controller
             return redirect()->route('login');
         }
     }
+    // Get Order
+
 
     public function getReduceByOne($id)
     {
@@ -54,5 +56,21 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
-    // public function 
+    // public function getOrder() 
+    // {
+
+    // }
+
+    public function postOrder(Request $request)
+    {
+        $order = new Order();
+        // $order->user_id = Auth::user()->id;
+
+        $order->cart_id = $request -> cart_id;
+        $order->total = $request->total;
+        $order->address = $request->address;
+        $order->save();
+        return redirect()->route('index');
+    }
+
 }

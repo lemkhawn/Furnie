@@ -50,12 +50,12 @@ class addProduct extends Controller
         return view('admin.showProduct', ['product' => $product] );
     }
 
-    public function showProductByCategory($id)
-    {
-        //
-        $product = Product::where('category_id', $id)->get();
-        return view('showProduct', ['product' => $product]);
-    }
+    // public function showProductByCategory($id)
+    // {
+    //     //
+    //     $product = Product::where('category_id', $id)->get();
+    //     return view('showProduct', ['product' => $product]);
+    // }
      
     public function getEditProduct( $id)
     {

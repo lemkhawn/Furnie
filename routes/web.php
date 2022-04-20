@@ -134,7 +134,8 @@ Route::post('/detail/{id}', 'CartController@getAddToCart') -> name('getAddToCart
 Route::get('/cart', 'CartController@getCart') -> name('cart');
 Route::get('/deleteCart/{id}', 'CartController@getReduceByOne') -> name('deleteCart');
 
-
+Route::get('getOrder', 'CartController@getOrder') -> name('getOrder');
+Route::post('getOrder', 'CartController@postOrder') -> name('postOrder');
 
 
 Route::get('/showArticle', 'ArticleController@showArticle') -> name('showArticle'); // show in index
