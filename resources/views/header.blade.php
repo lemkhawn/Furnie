@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
 
   <!-- font awesome style -->
-  <link href="../css/font-awesome.min.css" rel="stylesheet" />
+  <link href="./css/font-awesome.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Custom styles for this template -->
   <link href="../css/style.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
   <link href="../css/responsive.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/R-L.css">
+  <link rel="stylesheet" href="/css/R-L.css">
 </head>
 
 <body>
@@ -55,9 +55,9 @@
               <li class="nav-item active">
                 <a class="nav-link" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="about"> About</a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <!-- <a class="nav-link" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="furniture.html">Furniture </a>
                     <div class="dropdown">
@@ -82,10 +82,10 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="blog">Blog</a>
+                <a class="nav-link" href="{{route('blog')}}">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact">Contact Us</a>
+                <a class="nav-link" href="#contact_section">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -95,9 +95,10 @@
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-dark btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
-            </form>
+          </form>
           <form class="form-inline">
 
+<<<<<<< HEAD
             <a href="{{route('getCart')}}">
             <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
             </a>
@@ -130,6 +131,32 @@
                 </button>
               @endif
             </form>
+=======
+            <a href="{{route('cart')}}">
+              <i class="fa-solid fa-cart-shopping"aria-hidden="true"></i>
+            </a>
+
+            @if(Auth::check())
+              <div class="btn-group">
+                  <div  class="btn btn-light btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    {{Auth::user()->username}}
+                  </div>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    @if(Auth::user()->user_role == 'admin')
+                      <li><a class="dropdown-item" href="{{ route('admin') }}">Manage</a></li>
+                    @endif
+                    <li><a class="dropdown-item" href="{{route('logout')}} ">Logout</a></li>
+                  </ul>
+              </div>
+            @else 
+              <a href="{{ route('login') }}" class="btn btn-secondary-outline">
+                <i class="fa fa-user" aria-hidden="true"></i> Login
+              </a>
+            @endif
+        </form>
+>>>>>>> KienNg
           </div>
         </div>
       </nav>

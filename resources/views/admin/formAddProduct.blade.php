@@ -1,5 +1,4 @@
-{{-- @include('header'); --}}
-{{-- @include('admin.navigationBar') --}}
+
 @extends('admin.admin')
 @section('addProduct')
 <form action="#" method="post" enctype="multipart/form-data" style="width: 80%; margin: 10px auto" >

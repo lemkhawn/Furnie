@@ -1,5 +1,4 @@
 @include('header')
-@yield('Register')
 <body>
   <div class="container-r">
     <div class="title">Registration</div>

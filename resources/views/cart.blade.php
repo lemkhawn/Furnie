@@ -1,10 +1,4 @@
 @include('header')
-  @yield('cart')    
-  <!--<section class="jumbotron text-center">
-    <div class="container">
-        <h3 class="jumbotron-heading">FURNIE'S CART</h3>
-     </div>
-</section>-->
 
 <section class="vh-100" style="background-color: #fdccbc;">
   <div class="container h-100">
@@ -14,11 +8,17 @@
         
           <div class="card mb-4">
             <div class="card-body p-4">
+<<<<<<< HEAD
 
               @foreach ($cart as $item)
               
               {{-- <form action="{{route('deleteProductOnCart/'.$item->'cart.id')}}" method="post"> --}}
 
+=======
+              {{-- start loop --}}
+              @foreach ($cart as $item)
+              
+>>>>>>> KienNg
                 <div class="row align-items-center justify-content-between">
                   <div class="col-md-2">
                     <img src="{{asset('../images/products/'.$item->images)}}" class="img-fluid" alt="Generic placeholder image">
@@ -50,18 +50,27 @@
                   <div class="col-md-2 d-flex justify-content-center">
                     <div>
                       <p class="small text-muted mb-4 pb-2">Delete</p>
+<<<<<<< HEAD
                       <a type="submit" href="{{route('deleteProductOnCart',$item->id)}}" class="btn btn-danger">
+=======
+                      <a type="submit" href="{{route('deleteCart',$item->id)}}" class="btn btn-danger">
+>>>>>>> KienNg
                           Delete
                       </a>
                     </div>
                   </div>
                 </div>
 
+<<<<<<< HEAD
               {{-- </form> --}}
 
 
               @endforeach
   
+=======
+              @endforeach
+                {{-- end loop --}}
+>>>>>>> KienNg
             </div>
           </div>
   
@@ -79,6 +88,7 @@
             </div>
           </div>
 
+<<<<<<< HEAD
           <form action="" method="post">
             @csrf
             <div class="d-flex justify-content-end">
@@ -88,11 +98,19 @@
 
           </form>
   
+=======
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button>
+              <a href="{{route('getOrder')}}" class="btn btn-primary btn-lg">Checkout and get Bill</a>
+            </div>
+
+>>>>>>> KienNg
         </div>
       </div>
     </div>
   </section>
 @include('footer')
+<<<<<<< HEAD
 
 <script>
   function mult(value)
@@ -102,3 +120,5 @@
     document.getElementById("subTotal").value = x;
   }
 </script>
+=======
+>>>>>>> KienNg

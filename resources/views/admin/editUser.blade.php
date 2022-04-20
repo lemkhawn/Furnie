@@ -1,7 +1,4 @@
-{{-- @include('header'); --}}
-{{-- @include('admin.navigationBar') --}}
 @extends('admin.admin')
-{{-- @include('admin.admin') --}}
 @section('editUser/{{$user->id}}')
 <form action="" method="post" style="width: 80%; margin:10px auto; background-color:#FFFFFF; border-radius: 8px ">
     @csrf

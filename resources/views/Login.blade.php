@@ -1,12 +1,10 @@
 @include('header')
-@yield('Login')
 <body>
-
 
   <div class="container-r">
       <div class="title">Login</div>
       <div class="content-r">
-        <form action="#" method="post" role="form">
+        <form action="#" method="post" >
           @csrf
           @if(session('error'))
             <section class='alert alert-danger'>{{session('error')}}</section>
@@ -24,7 +22,7 @@
           <div class="button">
             <input type="submit" >
           </div>
-          <a href="register">Don't have an account?</a>
+          <a href="{{route('register')}}">Don't have an account?</a>
         </form>
       </div>
     </div>

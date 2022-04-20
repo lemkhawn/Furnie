@@ -1,5 +1,4 @@
-{{-- @include('header'); --}}
-{{-- @include('admin.navigationBar') --}}
+
 @extends('admin.admin')
 @section('listProduct')
 </nav>

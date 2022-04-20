@@ -1,5 +1,3 @@
-{{-- @include('header') --}}
-{{-- @include('admin.navigationBar') --}}
 @extends('admin.admin')
 @section('listCategory')
 <table style="width: 80%; margin: 10px auto" class="table table-striped">

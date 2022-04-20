@@ -1,4 +1,5 @@
 @include('header')
+<<<<<<< HEAD
 
 <div class="container py-5">
     <form action="" method="post" >
@@ -7,6 +8,15 @@
             <div class="col-lg-8">
                 <div class="product_img text-center">
                     <img src="{{asset('../images/products/'.$product->images)}}" alt="" style="height: 400px">
+=======
+<form action="" method="post" >
+    @csrf
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="product_img text-center">
+                    <img src="{{asset('/images/products/'.$product->images)}}" alt="" style="height: 400px">
+>>>>>>> KienNg
                 </div>
             </div>
             <div class="col-lg-4">
@@ -24,10 +34,15 @@
                     <h5>
                         Descrition: {{$product->description}}
                     </h5>
+<<<<<<< HEAD
+=======
+                    <input type="number" name="quantity" id="" value="1">
+>>>>>>> KienNg
                     <div class="price_box">
                         <h5 class="price_heading">
                             Price: <span>$</span>{{$product->price}}
                         </h5>
+<<<<<<< HEAD
                         <a href="" class="btn btn-outline-success " type="button">
                             Buy Now
                         </a>
@@ -36,13 +51,24 @@
                             Add to Cart
                         </button>
                         {{-- </button> --}}
+=======
+                        <button class="btn btn-outline-danger " type="submit">
+                            Add to cart
+                        </button>
+>>>>>>> KienNg
                     </div>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
     </form>
 </div>
+=======
+    </div>
+    
+</form>
+>>>>>>> KienNg
 
 
 <style>

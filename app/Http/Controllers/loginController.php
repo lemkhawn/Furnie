@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-// use Session;
 use App\Models\User;
-use Auth;
 
 
 class loginController extends Controller
@@ -34,19 +32,6 @@ class loginController extends Controller
         }
     }
 
-
-
-    // public function getSession() 
-    // {
-    //     if(Session::has('username')) {
-    //         // return response()->json(['session' => Session::get('username')]);
-    //         $data = Session::get('username');
-    //         $data = Session::get('password');
-    //         dd($data);
-    //     } else {
-    //         return response()->json(['session' => 'null']);
-    //     }
-    // }
 
     public function getSignup()
     {
@@ -100,7 +85,11 @@ class loginController extends Controller
         return redirect()->route('listUser');
     }
 
+<<<<<<< HEAD
     public function getLogout() 
+=======
+    public function logOut()
+>>>>>>> KienNg
     {
         Auth::logout();
         return redirect()->route('login');

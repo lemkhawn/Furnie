@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
     protected $fillable = [
         'product_id', 'user_id', 'quantity'
@@ -23,4 +24,9 @@ class Cart extends Model
     // {
     //     return $this->hasMany('App\Cart' , 'id', 'product_id');
     // }
+=======
+    protected $table = 'carts';
+    protected $fillable = ['product_id', 'user_id', 'quantity'];
+    
+>>>>>>> KienNg
 }
