@@ -41,7 +41,7 @@ class ArticleController extends Controller
         $article->content = $request->content;
         $article->image = $filename;
         $article->save();
-        return redirect()->route('showArticle')->with('success', 'add article success');
+        return redirect()->route('showAdminArticle')->with('success', 'add article success');
     }
 
     
@@ -53,20 +53,27 @@ class ArticleController extends Controller
 
     public function postEditArticle(Request $request, $id)
     {
+        if($request->hasFile('images')) {
+            $file = $request->file('images');
+            // $path = $request->file('images')->store('images/products');
+            $path = public_path('images/article');
+            $filename = time().'_' . $file->getClientOriginalName();
+            $file->move($path, $filename);
+        } 
         $article = Article::find($id);
         $article->title = $request->title;
         $article->description = $request->description;
         $article->content = $request->content;
-        $article->image = $request->image;
+        $article->image = $filename;
         $article->save();
-        return redirect()->route('showArticle')->with('success', 'update article success');
+        return redirect()->route('showAdminArticle')->with('success', 'update article success');
     }
 
     public function deleteArticle($id)
     {
         $article = Article::find($id);
         $article->delete();
-        return redirect()->route('showArticle')->with('success', 'delete article success');
+        return redirect()->route('showAdminArticle')->with('success', 'delete article success');
     }
 
 }

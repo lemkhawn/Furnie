@@ -20,8 +20,8 @@ class CartController extends Controller
             $cart->user_id = Auth()->user()->id;
             $cart->quantity = $request->quantity;
             $cart->save();
+            dd($cart);
             $alertadd = 'Add to cart successfully!';
-            // dd($cart);
             return redirect()->route('cart');
         }
         else {

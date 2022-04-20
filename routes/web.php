@@ -44,8 +44,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 Route::get('/blog', function () {
-    return view('blog');
-});
+    $article = DB::table('articles')->get();
+    return view('blog', compact('article'));
+}) -> name('blog');
 // Route::get('/about', function () {
 // //     return view('about');
 // });
@@ -123,18 +124,19 @@ Route::post('/detail/{id}', 'CartController@getAddToCart') -> name('getAddToCart
 Route::get('/cart', 'CartController@getCart') -> name('cart');
 Route::get('/deleteCart/{id}', 'CartController@deleteCart') -> name('deleteCart');
 
-Route::get('/showArticle', 'ArticleController@showArticle') -> name('showArticle');
-Route::get('/showAdminArticle', 'ArticleController@showArticle') -> name('showAdminArticle');
-Route::get('/addArticle', 'ArticleController@addArticle') -> name('addArticle');
+
+
+
+Route::get('/showArticle', 'ArticleController@showArticle') -> name('showArticle'); // show in index
+Route::get('/showAdminArticle', 'ArticleController@showAdminArticle') -> name('showAdminArticle'); // show in admin
+Route::get('/addArticle', 'ArticleController@addArticle') -> name('addArticle'); // add in admin
+Route::post('/addArticle', 'ArticleController@postArticle');
 
 Route::get('detailArticle/{id}', function ($id) {
     $article = DB::table('articles')->where('id', $id)->first();
     return view('detailArticle', ['article' => $article]);
-}) -> name('detailArticle');
+}) -> name('detailArticle'); // view article in index
 
-
-
-Route::post('/addArticle', 'ArticleController@postArticle');
 Route::get('/editArticle/{id}', 'ArticleController@getEditArticle') -> name('editArticle');
 Route::post('/editArticle/{id}', 'ArticleController@postEditArticle');
 Route::get('/deleteArticle/{id}', 'ArticleController@deleteArticle') -> name('deleteArticle');

@@ -68,11 +68,19 @@ class addProduct extends Controller
     public function postEditProduct(Request $request,$id) 
     {
         //
+        if($request->hasFile('images')) {
+            $file = $request->file('images');
+            // $path = $request->file('images')->store('images/products');
+            $path = public_path('images/products');
+            $filename = time().'_' . $file->getClientOriginalName();
+            $file->move($path, $filename);
+        } 
         $product = Product::find($id);
         $product->productname = $request->productname;
         $product->price = $request->price;
         $product->size = $request->size;
         $product->color = $request->color;
+        $product->images = $filename;
         $product->category_id = $request->category_id;
         $product->description = $request->description;
         $product->save();
