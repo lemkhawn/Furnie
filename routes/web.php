@@ -61,15 +61,6 @@ Route::get('/chandeliers', function () {
     return view('chandeliers');
 });
 Route::get('/admin', function () {
-    // if(Auth::check()) {
-    //     if(Auth::user()->user_role == 'admin') {
-    //         return view('admin');
-    //     } else {
-    //         return view('index');
-    //     }
-    // } else {
-    //     return view('index');
-    // }
     return view('admin.admin');
 }) -> name('admin');
 
@@ -83,35 +74,23 @@ Route::post('/register', 'loginController@postSignup');
 Route::get('/logout', 'loginController@logOut') -> name('logout');
 
 
-// Route edit and delete user
-// Route::group(['prefix' => 'user'], function() 
-// {
+
     Route::get('/listUser/', 'loginController@listUser') -> name('listUser');
     Route::get('/editUser/{id}', 'loginController@getEditUser') -> name('editUser');
     Route::post('/editUser/{id}', 'loginController@postEditUser');
     Route::get('/deleteUser/{id}', 'loginController@deleteUser') -> name('deleteUser');
-// });
+
 
 Route::get('/getSession', 'loginController@getSession') -> name('getSession');
 
-// route product
-// Route::group(['prefix' => 'product'], function() 
-// {
+
     Route::get('/listProduct/', 'addProduct@listProduct') -> name('listProduct');
     Route::get('/addProduct/', 'addProduct@getAddProduct') -> name('addProduct');
     Route::post('/addProduct/', 'addProduct@postAddProduct');
     Route::get('/editProduct/{id}', 'addProduct@getEditProduct') -> name('editProduct');
     Route::post('/editProduct/{id}', 'addProduct@postEditProduct');
     Route::get('/deleteProduct/{id}', 'addProduct@deleteProduct') -> name('deleteProduct');
-// });
 
-// Route::get('/product', 'addProduct@showProduct') -> name('product');
-// Route::get('/addproductform', 'addProduct@addForm') -> name('addform');
-// Route::post('/addproductform', 'addProduct@addProduct') -> name('addProduct');
-
-// route category
-// Route::group(['prefix' => 'cate'], function() 
-// {
     Route::get('/listCategory', 'CategoryController@showCategory') -> name('listCategory');
     Route::get('/addcategoryform', 'CategoryController@addCate') -> name('addCategory');
     Route::post('/addcategoryform', 'CategoryController@addCategory') -> name('addCategory');

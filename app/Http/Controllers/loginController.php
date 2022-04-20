@@ -16,8 +16,6 @@ class loginController extends Controller
         return view('Login');
     }
 
-    
-
     public function postLogin(Request $request)
     {
         $arr = ['username' => $request->username, 'password' => $request->password];

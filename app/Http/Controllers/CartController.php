@@ -31,7 +31,6 @@ class CartController extends Controller
 
     public function getCart()
     {
-        // $cart = new Cart();
         if(Auth::user()) {
             $cart = DB::table('carts')
                 ->join('products', 'products.id', '=', 'carts.product_id')
@@ -45,13 +44,10 @@ class CartController extends Controller
             return redirect()->route('login');
         }
     }
-    // Get Order
-
 
     public function getReduceByOne($id)
     {
         $cart = Cart::find($id);
-        // $cart->quantity = $cart->quantity - 1;
         $cart->delete();
         return redirect()->route('cart');
     }

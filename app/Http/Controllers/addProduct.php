@@ -42,20 +42,7 @@ class addProduct extends Controller
     }
 
 
-    public function listProduct()
-    {
-        //
-        // $category = Category::all();
-        $product = Product::all();
-        return view('admin.showProduct', ['product' => $product] );
-    }
 
-    // public function showProductByCategory($id)
-    // {
-    //     //
-    //     $product = Product::where('category_id', $id)->get();
-    //     return view('showProduct', ['product' => $product]);
-    // }
      
     public function getEditProduct( $id)
     {
@@ -93,6 +80,12 @@ class addProduct extends Controller
         $product = Product::find($id);
         $product->delete();
         return redirect()->route('listProduct')-> with('success', 'Product has been deleted');
+    }
+
+    public function listProduct()
+    {
+        $product = Product::all();
+        return view('admin.showProduct', ['product' => $product] );
     }
 
     
