@@ -19,7 +19,7 @@ class CategoryController extends Controller
         $category->categoryname = request('categoryname');
         $category->description = request('description');
         $category->save();
-        return redirect()->route('category')->with('success', 'add category success');
+        return redirect()->route('listCategory')->with('success', 'add category success');
     }
 
     public function showCategory()
@@ -47,6 +47,6 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect()->route('category')->with('success', 'delete category success');
+        return redirect()->route('listCategory')->with('success', 'delete category success');
     }
 }

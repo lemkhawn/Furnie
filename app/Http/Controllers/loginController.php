@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-<<<<<<< HEAD
-=======
-// use Auth;
->>>>>>> 45fb6cbc63da18de799162211d3032bbef1bd736
 
 
 class loginController extends Controller
@@ -38,19 +34,6 @@ class loginController extends Controller
         }
     }
 
-
-
-    // public function getSession() 
-    // {
-    //     if(Session::has('username')) {
-    //         // return response()->json(['session' => Session::get('username')]);
-    //         $data = Session::get('username');
-    //         $data = Session::get('password');
-    //         dd($data);
-    //     } else {
-    //         return response()->json(['session' => 'null']);
-    //     }
-    // }
 
     public function getSignup()
     {
@@ -102,5 +85,11 @@ class loginController extends Controller
         $user = User::find($id);
         $user->delete();
         return redirect()->route('listUser');
+    }
+
+    public function logOut()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

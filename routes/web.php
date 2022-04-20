@@ -60,9 +60,7 @@ Route::get('/chandeliers', function () {
 });
 Route::get('/admin', function () {
     return view('admin.admin');
-});
-
-Route::get('navi', 'navController@getNav');
+}) -> name('admin');
 
 
 // Route login and register
@@ -71,6 +69,8 @@ Route::post('/login', 'loginController@postLogin');
 
 Route::get('/register', 'loginController@getSignup') -> name('register');
 Route::post('/register', 'loginController@postSignup');
+Route::get('/logout', 'loginController@logOut') -> name('logout');
+
 
 // Route edit and delete user
 // Route::group(['prefix' => 'user'], function() 
@@ -114,11 +114,14 @@ Route::get('/chair', function () {
     return view('chair', ['products' => $products]);
 });
 
-Route::get('detail/{id}', function ($id) {
+Route::get('/detail/{id}', function ($id) {
     $product = DB::table('products')->where('id', $id)->first();
     return view('detailProduct', ['product' => $product]);
 }) -> name('detail');
+Route::post('/detail/{id}', 'CartController@getAddToCart') -> name('getAddToCart');
 
+Route::get('/cart', 'CartController@getCart') -> name('cart');
+Route::get('/deleteCart/{id}', 'CartController@deleteCart') -> name('deleteCart');
 
 Route::get('/showArticle', 'ArticleController@showArticle') -> name('showArticle');
 Route::get('/showAdminArticle', 'ArticleController@showArticle') -> name('showAdminArticle');
@@ -128,6 +131,8 @@ Route::get('detailArticle/{id}', function ($id) {
     $article = DB::table('articles')->where('id', $id)->first();
     return view('detailArticle', ['article' => $article]);
 }) -> name('detailArticle');
+
+
 
 Route::post('/addArticle', 'ArticleController@postArticle');
 Route::get('/editArticle/{id}', 'ArticleController@getEditArticle') -> name('editArticle');

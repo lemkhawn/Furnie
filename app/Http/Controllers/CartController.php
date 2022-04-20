@@ -18,11 +18,11 @@ class CartController extends Controller
             $cart = new Cart();
             $cart->product_id = Product::find($id)->id;
             $cart->user_id = Auth()->user()->id;
-            $cart->quantity = $value ?? '1';
+            $cart->quantity = $request->quantity;
             $cart->save();
             $alertadd = 'Add to cart successfully!';
             // dd($cart);
-            return back()->with('alertadd', $alertadd);
+            return redirect()->route('cart');
         }
         else {
             return redirect()->route('login');
@@ -32,10 +32,10 @@ class CartController extends Controller
     public function getCart()
     {
         // $cart = new Cart();
-        $cart = DB::table('cart')
-            ->join('products', 'products.id', '=', 'cart.product_id')
-            ->join('users', 'users.id', '=', 'cart.user_id')
-            ->select('cart.id','products.productname', 'products.price', 'products.images','products.color', 'users.username')
+        $cart = DB::table('carts')
+            ->join('products', 'products.id', '=', 'carts.product_id')
+            ->join('users', 'users.id', '=', 'carts.user_id')
+            ->select('carts.id','products.productname', 'products.price', 'products.images','products.color', 'users.username')
             ->where('users.id', Auth::user()->id)
             ->get();
         $total = 0;
