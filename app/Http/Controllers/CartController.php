@@ -20,7 +20,7 @@ class CartController extends Controller
             $cart->user_id = Auth()->user()->id;
             $cart->quantity = $request->quantity;
             $cart->save();
-            dd($cart);
+            // dd($cart);
             $alertadd = 'Add to cart successfully!';
             return redirect()->route('cart');
         }
@@ -32,15 +32,18 @@ class CartController extends Controller
     public function getCart()
     {
         // $cart = new Cart();
-        $cart = DB::table('carts')
-            ->join('products', 'products.id', '=', 'carts.product_id')
-            ->join('users', 'users.id', '=', 'carts.user_id')
-            ->select('carts.id','products.productname', 'products.price', 'products.images','products.color', 'users.username')
-            ->where('users.id', Auth::user()->id)
-            ->get();
-        $total = 0;
-        return view('cart', ['cart' => $cart], ['total' => $total]);
-
+        if(Auth::user()) {
+            $cart = DB::table('carts')
+                ->join('products', 'products.id', '=', 'carts.product_id')
+                ->join('users', 'users.id', '=', 'carts.user_id')
+                ->select('carts.id','products.productname', 'products.price', 'products.images','products.color', 'users.username')
+                ->where('users.id', Auth::user()->id)
+                ->get();
+            $total = 0;
+            return view('cart', ['cart' => $cart], ['total' => $total]);
+        } else {
+            return redirect()->route('login');
+        }
     }
 
     public function getReduceByOne($id)
@@ -48,7 +51,7 @@ class CartController extends Controller
         $cart = Cart::find($id);
         // $cart->quantity = $cart->quantity - 1;
         $cart->delete();
-        return redirect()->route('getCart');
+        return redirect()->route('cart');
     }
 
     // public function 

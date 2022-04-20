@@ -287,6 +287,8 @@
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
+                        {{-- @if (Auth::check()->user()->user_role == 'admin') --}}
+                            
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -316,6 +318,7 @@
                                 </a>
                             </div>
                         </li>
+                        {{-- @endif --}}
 
                     </ul>
 
@@ -338,22 +341,14 @@
                 @yield('editArticle')
 
                 <!-- End of Topbar -->
+
+
             </div>
 
                 <!-- Begin Page Content -->
                 
-        
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            {{-- <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer> --}}
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->

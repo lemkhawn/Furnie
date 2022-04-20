@@ -1,5 +1,5 @@
 @include('header')
-@yield('blog')
+@section('blog')
   <!-- blog section -->
   <section class="blog_section layout_padding">
     <div class="container">
@@ -30,7 +30,11 @@
           </div>
         </div>
         @endforeach
-<style>
+      </div>
+    </div>
+  </section>
+
+  <style>
     .lineclamp{
       -webkit-line-clamp: 2;
       overflow: hidden;
@@ -40,43 +44,4 @@
       padding-bottom: 0 !important;
   }
 </style>
-        {{-- <div class="col-md-6 col-lg-4 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/b2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Anything embarrassing hidden in the middle
-              </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mx-auto">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/b3.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Molestias magni natus dolores odio commodi. Quaerat!
-              </h5>
-              <p>
-                alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
-              <a href="">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div> --}}
-      </div>
-    </div>
-  </section>
 @include('footer')

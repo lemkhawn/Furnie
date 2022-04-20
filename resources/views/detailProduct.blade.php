@@ -1,7 +1,6 @@
 @include('header')
-{{-- @yield('detail') --}}
 <form action="" method="post" >
-
+    @csrf
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8">
@@ -29,9 +28,9 @@
                         <h5 class="price_heading">
                             Price: <span>$</span>{{$product->price}}
                         </h5>
-                        <a class="btn btn-outline-danger " type="submit">
+                        <button class="btn btn-outline-danger " type="submit">
                             Add to cart
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

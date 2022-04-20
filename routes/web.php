@@ -33,7 +33,8 @@ Route::get('/', function () {
 
 Route::get('/index', function () {
     $product = DB::table('products')->get();
-    return view('index');
+    $article = DB::table('articles')->get();
+    return view('index', compact('product', 'article'));
 }) -> name('index');
 
 Route::get('/products', function () {
@@ -60,6 +61,15 @@ Route::get('/chandeliers', function () {
     return view('chandeliers');
 });
 Route::get('/admin', function () {
+    // if(Auth::check()) {
+    //     if(Auth::user()->user_role == 'admin') {
+    //         return view('admin');
+    //     } else {
+    //         return view('index');
+    //     }
+    // } else {
+    //     return view('index');
+    // }
     return view('admin.admin');
 }) -> name('admin');
 
@@ -122,7 +132,7 @@ Route::get('/detail/{id}', function ($id) {
 Route::post('/detail/{id}', 'CartController@getAddToCart') -> name('getAddToCart');
 
 Route::get('/cart', 'CartController@getCart') -> name('cart');
-Route::get('/deleteCart/{id}', 'CartController@deleteCart') -> name('deleteCart');
+Route::get('/deleteCart/{id}', 'CartController@getReduceByOne') -> name('deleteCart');
 
 
 

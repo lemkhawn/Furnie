@@ -50,7 +50,7 @@
                   <div class="col-md-2 d-flex justify-content-center">
                     <div>
                       <p class="small text-muted mb-4 pb-2">Delete</p>
-                      <a type="submit" href="{{route('deleteProductOnCart',$item->id)}}" class="btn btn-danger">
+                      <a type="submit" href="{{route('deleteCart',$item->id)}}" class="btn btn-danger">
                           Delete
                       </a>
                     </div>

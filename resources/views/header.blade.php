@@ -55,9 +55,9 @@
               <li class="nav-item active">
                 <a class="nav-link" href="{{route('index')}}">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
+              {{-- <li class="nav-item">
                 <a class="nav-link" href="about"> About</a>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <!-- <a class="nav-link" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="furniture.html">Furniture </a>
                     <div class="dropdown">
@@ -110,7 +110,9 @@
                   </div>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="{{ route('admin') }}">Manage</a></li>
+                    @if(Auth::user()->user_role == 'admin')
+                      <li><a class="dropdown-item" href="{{ route('admin') }}">Manage</a></li>
+                    @endif
                     <li><a class="dropdown-item" href="{{route('logout')}} ">Logout</a></li>
                   </ul>
               </div>
