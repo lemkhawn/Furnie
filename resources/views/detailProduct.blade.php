@@ -29,6 +29,9 @@
                     <a href="" class="btn btn-outline-success " type="button">
                         Buy Now
                     </a>
+                    <a href="" class="btn btn-outline-success " type="button">
+                        Add to cart
+                    </a>
                 </div>
             </div>
         </div>
