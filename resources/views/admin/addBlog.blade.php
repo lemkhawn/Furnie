@@ -1,3 +1,4 @@
+
 @extends('admin.admin')
 @section('addBlog')
 <form action="" method="post" style="width: 80%; margin: 10px auto">

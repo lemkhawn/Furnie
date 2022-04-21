@@ -2,7 +2,7 @@
 {{-- @include('admin.navigationBar') --}}
 
 @extends('admin.admin')
-@section('editBlog')
+@section('editBlogs')
 <form action="" method="post" style="width: 80%; margin: 10px auto">
     @csrf
     <div class="form-group">

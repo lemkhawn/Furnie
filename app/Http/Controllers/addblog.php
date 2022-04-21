@@ -13,7 +13,7 @@ class addblog extends Controller
         return view('admin.addBlog');
     }
 
-    public function addBlog() 
+    public function addBlogs() 
     {
         $blog = new Blog;
         $blog->blog_name = request('blog_name');
@@ -31,10 +31,10 @@ class addblog extends Controller
     public function editBlog($id)
     {
         $category = Blog::find($id);
-        return view('admin.editBlog')->with('blog', $blog);
+        return view('admin.editBlogs')->with('blog', $blog);
     }
 
-    public function editBlog($id)
+    public function editBlogs($id)
     {
         $blog = new Blog;
         $blog->blog_name = request('blog_name');
@@ -43,7 +43,7 @@ class addblog extends Controller
         return redirect()->route('listBlog')->with('success', 'add Blog success');
     }
 
-    public function deleteCategory($id)
+    public function deleteBlog($id)
     {
         $category = Blog::find($id);
         $category->delete();

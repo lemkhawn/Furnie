@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 // use App\Http\Controllers\productController;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Category;
+use App\Http\Controllers\addblog;
 
 /*
 |--------------------------------------------------------------------------
@@ -108,6 +109,14 @@ Route::get('/getSession', 'loginController@getSession') -> name('getSession');
     Route::post('/editcategoryform/{id}', 'CategoryController@editCategory') -> name('editCategory');
     Route::get('/deletecategoryform/{id}', 'CategoryController@deleteCategory') -> name('deleteCategory');
 // });
+
+    Route::get('/listblog', 'addblog@showBlog') -> name('listBlog');
+    Route::get('/addBlog', 'addblog@addBlog') -> name('addBlogs');
+    Route::post('/addBlog', 'addblog@addBlogs') -> name('addBlogs');
+    Route::get('/editblogform/{id}', 'addblog@editBlog') -> name('editBlogForm');
+    Route::post('/editblogform/{id}', 'addblog@editBlog') -> name('editBlog');
+    Route::get('/deleteblogform/{id}', 'addblog@deleteBlog') -> name('deleteBlog');
+
 
 Route::get('/chair', function () {
     $products = DB::table('products')->get();
