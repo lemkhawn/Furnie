@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Category;
 use App\Http\Controllers\addblog;
+use App\Http\Controllers\brandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,10 +114,16 @@ Route::get('/getSession', 'loginController@getSession') -> name('getSession');
     Route::get('/listblog', 'addblog@showBlog') -> name('listBlog');
     Route::get('/addBlog', 'addblog@addBlog') -> name('addBlogs');
     Route::post('/addBlog', 'addblog@addBlogs') -> name('addBlogs');
-    Route::get('/editblogform/{id}', 'addblog@editBlog') -> name('editBlogForm');
-    Route::post('/editblogform/{id}', 'addblog@editBlog') -> name('editBlog');
+    Route::get('/editblogform/{id}', 'addblog@editBlog') -> name('editBlog');
+    Route::post('/editblogform/{id}', 'addblog@editBlogs') -> name('editBlogs');
     Route::get('/deleteblogform/{id}', 'addblog@deleteBlog') -> name('deleteBlog');
 
+    Route::get('/listbrand', 'brandController@showBrand') -> name('listBrand');
+    Route::get('/addBrand', 'brandController@addBrand') -> name('addBrands');
+    Route::post('/addBrand', 'brandController@addBrands') -> name('addBrands');
+    Route::get('/editbrandform/{id}', 'brandController@editBrand') -> name('editBrand');
+    Route::post('/editbrandform/{id}', 'brandController@editBrands') -> name('editBrand');
+    Route::get('/deletebrandform/{id}', 'brandController@deleteBrand') -> name('deleteBrand');
 
 Route::get('/chair', function () {
     $products = DB::table('products')->get();

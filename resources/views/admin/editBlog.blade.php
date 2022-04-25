@@ -7,11 +7,11 @@
     @csrf
     <div class="form-group">
         <label for="name">Name Blog</label>
-        <input type="text" class="form-control" id="name" name="categoryname" placeholder="Enter name" value="{{$blog->categoryname }}">
+        <input type="text" class="form-control" id="name" name="blog_name" placeholder="Enter name"value="{{$blog->blog_name }}">
     </div>
     <div class="form-group">
         <label for="description">Blog description</label>
-        <input class="form-control" id="description" name="description" rows="3" value="{{$blog->description}}"></ì>
+        <input type="text" class="form-control" id="description" name="blog_description" rows="3"value="{{$blog->blog_description }}">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

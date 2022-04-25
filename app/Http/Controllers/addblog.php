@@ -24,30 +24,30 @@ class addblog extends Controller
 
     public function showBlog()
     {
-        $category = Blog::all();
-        return view('admin.showBlog')->with('blog', $blog);;    
+        $blog = Blog::all();
+        return view('admin.showBlog')->with('blog', $blog);   
     }
 
     public function editBlog($id)
     {
-        $category = Blog::find($id);
-        return view('admin.editBlogs')->with('blog', $blog);
+        $blog = Blog::find($id);
+        return view('admin.editBlog')->with('blog', $blog);
     }
 
     public function editBlogs($id)
     {
-        $blog = new Blog;
+        $blog = Blog::find($id);
         $blog->blog_name = request('blog_name');
         $blog->blog_description = request('blog_description');
         $blog->save();
-        return redirect()->route('listBlog')->with('success', 'add Blog success');
+        return redirect()->route('listBlog')->with('success', 'edit Blog success');
     }
 
     public function deleteBlog($id)
     {
-        $category = Blog::find($id);
-        $category->delete();
-        return redirect()->route('blog')->with('success', 'delete category success');
+        $blog = Blog::find($id);
+        $blog->delete();
+        return redirect()->route('listBlog')->with('success', 'delete blog success');
     }
 }
 

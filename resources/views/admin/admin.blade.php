@@ -374,6 +374,12 @@
                 @yield('listCategory')
                 @yield('editCategory')
                 @yield('addCategory')
+                @yield('addBlog')
+                @yield('editBlogs')
+                @yield('listBlog')
+                @yield('addBrand')
+                @yield('editBrands')
+                @yield('listBrand')
                 <!-- End of Topbar -->
             </div>
 
